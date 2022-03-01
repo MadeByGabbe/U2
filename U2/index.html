@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Volvo-car database</h1>
+
+    <form id="add-car-form">
+        <input id="model" type="text" placeholder="Model">
+        <input id="body" type="text" placeholder="Body">
+        <input id="price" type="text" placeholder="Price">
+        <input id="drivetrain" type="text" placeholder="Drivetrain">
+        <button>Add</button>
+    </form>
+
+    <div id="filters">
+        <form id="filter-by-body">
+            <input id="filter-breed" type="text" placeholder="Filter by body">
+            <button>Filter</button>
+        </form>
+
+        <form id="filter-by-drivetrain">
+            <input id="filter-age" type="number" placeholder="Filter by drivetrain">
+            <button>Filter</button>
+        </form>
+
+        <button id="show-all" type="button">Show all</button>
+
+    </div>
+
+    <button id="add" type="button">Add new car</button>
+
+    <div id="headers">
+        <div>Model</div>
+        <div>Body</div>
+        <div>Price</div>
+        <div>Drivetrain</div>
+    </div>
+
+    <div id="cars"></div>
+
+    <script src="database.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
