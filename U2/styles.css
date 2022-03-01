@@ -10,7 +10,7 @@ h1 {
 
 #add-car-form {
   display: grid;
-  grid-template-columns: 1fr 1fr 100px 60px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 10px;
   margin-bottom: 15px;
   padding-bottom: 15px;
@@ -36,7 +36,7 @@ h1 {
   border-bottom: 1px solid #aaa;
   background: beige;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
 
 #cars {
@@ -47,7 +47,7 @@ h1 {
 .car {
   padding: 10px 10px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .car div {

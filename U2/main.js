@@ -49,7 +49,7 @@ function getCarsByDrivetrain(cars, drivetrain) {
     
 }
 
-function injectCar(car) {
+function renderCar(car) {
     let div = document.createElement("div");
     div.classList.add("car");
     div.id = car.id
@@ -65,16 +65,16 @@ function injectCar(car) {
     return div;
 }
 
-function injectCars(cars) {
+function renderCars(cars) {
     let carsElement = document.getElementById("cars");
     carsElement.innerHTML = "";
 
     for (let car of cars) {
-        let carElement = injectCar(car);
+        let carElement = renderCar(car);
         carsElement.appendChild(carElement);
     }
 
-    setRemoveDogHandlers();
+    setRemoveCarHandlers();
 }
 
 function onAddCarSubmit(event) {
@@ -86,8 +86,10 @@ function onAddCarSubmit(event) {
     let drivetrain = document.getElementById("drivetrain").value;
 
 
-
     let car = createNewCar(model, body, price, drivetrain);
+
+    car.id = database[database.length - 1].id + 1;
+
     addCarToDatabaseFromPrompt(database, car);
     renderCars(database);
 
@@ -104,7 +106,7 @@ function onRemoveCarClick(event) {
     let button = event.target;
     let id = button.parentElement.id;
     removeCarById(database, id);
-    renderCars(cars);
+    renderCars(database);
 }
 
 function setRemoveCarHandlers() {
@@ -119,7 +121,7 @@ function onFilterByBody(event) {
     event.preventDefault();
     let body = document.getElementById("filter-body").value;
     let cars = getCarsByBody(database, body);
-    injectCars(cars);
+    renderCars(cars);
 }
 
 function onFilterByDrivetrain(event) {
@@ -131,7 +133,7 @@ function onFilterByDrivetrain(event) {
 function onListAllClick() {
     document.getElementById("filter-body").value = "";
     document.getElementById("filter-drivetrain").value = "";
-    injectCars(database);
+    renderCars(database);
 }
 
 function setFilterCarHandlers() {
@@ -144,6 +146,6 @@ function setFilterCarHandlers() {
     listAll.addEventListener("click", onListAllClick);
 }
 
-injectCars(database);
+renderCars(database);
 setAddCarHandler();
 setFilterCarHandlers();
