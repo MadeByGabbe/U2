@@ -1,1 +1,62 @@
+body {
+  margin: 0 auto;
+  max-width: 600px;
+  font-family: Courier;
+}
+
+h1 {
+  text-align: center;
+}
+
+#add-car-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 100px 60px;
+  gap: 10px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #aaa;
+}
+
+#filters {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 15px;
+  gap: 15px;
+}
+
+#filter-by-body,
+#filter-by-drivetrain {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+
+#headers {
+  padding: 10px 20px;
+  border-bottom: 1px solid #aaa;
+  background: beige;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+#cars {
+  background: beige;
+  padding: 10px;
+}
+
+.car {
+  padding: 10px 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.car div {
+  /* Center vertically */
+  display: flex;
+  align-items: center;
+}
+
+.car:nth-child(odd) {
+  background: #fffff0;
+}
 

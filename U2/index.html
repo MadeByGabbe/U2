@@ -15,7 +15,7 @@
     <form id="add-car-form">
         <input id="model" type="text" placeholder="Model">
         <input id="body" type="text" placeholder="Body">
-        <input id="price" type="text" placeholder="Price">
+        <input id="price" type="number" placeholder="Price">
         <input id="drivetrain" type="text" placeholder="Drivetrain">
         <button>Add</button>
     </form>
@@ -23,15 +23,18 @@
     <div id="filters">
         <form id="filter-by-body">
             <input id="filter-breed" type="text" placeholder="Filter by body">
+            <input id="filter-body" type="text" placeholder="Filter by body">
             <button>Filter</button>
         </form>
 
         <form id="filter-by-drivetrain">
             <input id="filter-age" type="number" placeholder="Filter by drivetrain">
+            <input id="filter-drivetrain" type="text" placeholder="Filter by drivetrain">
             <button>Filter</button>
         </form>
 
         <button id="show-all" type="button">Show all</button>
+        <button id="list-all" type="button">List all cars</button>
 
     </div>
 
