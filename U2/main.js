@@ -21,9 +21,14 @@ function removeCarById(cars, id) {
         let car = cars[i];
         if (car.id == id) {
             cars.splice(i, 1);
+            for (let y = i; y < cars.length; y++) {
+                cars[y].id = cars[y].id - 1;
+            }
             return;
         }
+        
     }
+
 }
 
 function getCarsByBody(cars, body) {
@@ -32,7 +37,12 @@ function getCarsByBody(cars, body) {
     for (let car of cars) {
         if (car.body.toLowerCase() == body.toLowerCase()) {
             carsByBody.push(car);
+        
         } 
+    }
+
+    for (let i = 0; i < carsByBody.length; i++) {
+        carsByBody[i].id = i + 1
     }
 
     return carsByBody;
@@ -45,6 +55,10 @@ function getCarsByDrivetrain(cars, drivetrain) {
         if (car.drivetrain.toLowerCase() == drivetrain.toLowerCase()) {
             carsByDrivetrain.push(car)
         }
+    }
+
+    for (let i = 0; i < carsByDrivetrain.length; i++) {
+        carsByDrivetrain[i].id = i + 1
     }
 
     return carsByDrivetrain
