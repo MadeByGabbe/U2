@@ -55,6 +55,7 @@ function renderCar(car) {
     div.id = car.id
 
     div.innerHTML = `
+    <div>${car.id}</div>
     <div>${car.model}</div>
     <div>${car.body}</div>
     <div>${car.price}</div>
@@ -84,6 +85,22 @@ function onAddCarSubmit(event) {
     let body = document.getElementById("body").value;
     let price = Number(document.getElementById("price").value);
     let drivetrain = document.getElementById("drivetrain").value;
+
+    if (model == "") {
+        return alert("You need to enter the model name!");
+    }
+
+    else if (body == "") {
+        return alert("You need to enter a body-type!")
+    }
+
+    else if (price == 0) {
+        return alert("You forgot to fill in a price!")
+    }
+
+    else if (drivetrain == "") {
+        return alert("You need to enter a drivetrain!")
+    }
 
 
     let car = createNewCar(model, body, price, drivetrain);
