@@ -42,11 +42,12 @@ function getCarsByDrivetrain(cars, drivetrain) {
     let carsByDrivetrain = [];
 
     for (let car of cars) {
-        if (car.drivetrain == drivetrain) {
+        if (car.drivetrain.toLowerCase() == drivetrain.toLowerCase()) {
             carsByDrivetrain.push(car)
         }
     }
-    
+
+    return carsByDrivetrain
 }
 
 function renderCar(car) {
@@ -146,7 +147,8 @@ function onFilterByBody(event) {
 function onFilterByDrivetrain(event) {
     event.preventDefault();
     let drivetrain = document.getElementById("filter-drivetrain").value;
-    let cars = getCarsByDrivetrain(database, drivetrain)
+    let cars = getCarsByDrivetrain(database, drivetrain);
+    renderCars(cars);
 }
 
 function onListAllClick() {
@@ -157,7 +159,7 @@ function onListAllClick() {
 
 function setFilterCarHandlers() {
     let body_form = document.getElementById("filter-by-body");
-    let drivetrain_form = document.getElementById("filter-by-drivetrain")
+    let drivetrain_form = document.getElementById("filter-by-drivetrain");
     let listAll = document.getElementById("list-all");
 
     body_form.addEventListener("submit", onFilterByBody);

@@ -16,7 +16,12 @@
         <input id="model" type="text" placeholder="Model">
         <input id="body" type="text" placeholder="Body">
         <input id="price" type="number" placeholder="Price">
-        <input id="drivetrain" type="text" placeholder="Drivetrain">
+        <select id="drivetrain" name="drivetrain">
+            <option value="FWD">FWD</option>
+            <option value="AWD">AWD</option>
+            <option value="RWD">RWD</option>
+            <option value="4WD">4WD</option>
+        </select>
         <button>Add</button>
     </form>
 
@@ -29,16 +34,19 @@
 
         <form id="filter-by-drivetrain">
             <input id="filter-age" type="number" placeholder="Filter by drivetrain">
-            <input id="filter-drivetrain" type="text" placeholder="Filter by drivetrain">
+            <select id="filter-drivetrain" name="filter-drivetrain">
+                <option value="FWD">FWD</option>
+                <option value="AWD">AWD</option>
+                <option value="RWD">RWD</option>
+                <option value="4WD">4WD</option>
+            </select>
             <button>Filter</button>
         </form>
 
-        <button id="show-all" type="button">Show all</button>
-        <button id="list-all" type="button">List all cars</button>
+        <button id="list-all" type="button">Reset filters</button>
 
     </div>
 
-    <button id="add" type="button">Add new car</button>
 
     <div id="headers">
         <div></div>
