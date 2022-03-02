@@ -85,6 +85,11 @@ function onAddCarSubmit(event) {
     let body = document.getElementById("body").value;
     let price = Number(document.getElementById("price").value);
     let drivetrain = document.getElementById("drivetrain").value;
+    let conf = confirm("Do you really want to add this car?")
+
+    let car = createNewCar(model, body, price, drivetrain);
+
+    car.id = database[database.length - 1].id + 1;
 
     if (model == "") {
         return alert("You need to enter the model name!");
@@ -98,16 +103,13 @@ function onAddCarSubmit(event) {
         return alert("You forgot to fill in a price!")
     }
 
-    else if (drivetrain == "") {
-        return alert("You need to enter a drivetrain!")
+    if (model != "" && body != "" && price != 0 == true) {
+        conf
+        if (conf == true) {
+            addCarToDatabase(database, car);
+        }
     }
 
-
-    let car = createNewCar(model, body, price, drivetrain);
-
-    car.id = database[database.length - 1].id + 1;
-
-    addCarToDatabaseFromPrompt(database, car);
     renderCars(database);
 
     let form = document.getElementById("add-car-form");
