@@ -20,15 +20,21 @@ function removeCarById(cars, id) {
     for (let i = 0; i < cars.length; i++) {
         let car = cars[i];
         if (car.id == id) {
-            cars.splice(i, 1);
-            for (let y = i; y < cars.length; y++) {
-                cars[y].id = cars[y].id - 1;
+            let conf = confirm(`Do you really want to remove ${car.model}?`)
+            conf
+            if (conf == true) {
+                cars.splice(i, 1);
+                for (let y = 0; y < cars.length; y++) {
+                    cars[y].id = y + 1;
+                }
+                
+
             }
+
             return;
         }
         
     }
-
 }
 
 function getCarsByBody(cars, body) {
@@ -140,7 +146,7 @@ function onRemoveCarClick(event) {
     let button = event.target;
     let id = button.parentElement.id;
     removeCarById(database, id);
-    renderCars(database);
+    renderCars(database)
 }
 
 function setRemoveCarHandlers() {
