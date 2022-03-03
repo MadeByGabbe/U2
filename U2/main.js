@@ -138,8 +138,8 @@ function onAddCarSubmit(event) {
 }
 
 function setAddCarHandler() {
-    let form = document.getElementById("add-car-form");
-    form.addEventListener("submit", onAddCarSubmit);
+    let form = document.getElementById("addbutton");
+    form.addEventListener("click", onAddCarSubmit);
 }
 
 function onRemoveCarClick(event) {
