@@ -5,7 +5,6 @@ body {
   width: 100vw;
   height: 100vh;
   font-family:'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: rgb(0, 49, 115);
   background-image: url(pictures/Volvo-V90.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -37,7 +36,7 @@ h1 {
   color: white;
 }
 
-#volvologo {
+#volvoLogoDiv {
   padding: 10px 10px;
   text-align: center;
   border-bottom: 1px grey solid;
@@ -53,7 +52,7 @@ h1 {
   color: white;
 }
 
-#adddiv {
+#addDiv {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,7 +109,7 @@ button {
   background: grey;
   color: white;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: 60px repeat(5, 1fr);
   text-align: center;
 }
 
@@ -124,11 +123,10 @@ button {
 .car {
   padding: 10px 10px;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: 60px repeat(5, 1fr);
 }
 
 .car div {
-  /* Center vertically */
   display: flex;
   align-items: center;
   justify-content: center;
