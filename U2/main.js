@@ -109,7 +109,6 @@ function onAddCarSubmit(event) {
 
     let car = createNewCar(model, body, price, drivetrain);
 
-    car.id = database[database.length - 1].id + 1;
 
     if (model == "") {
         return alert("You need to enter the model name!");
@@ -129,6 +128,8 @@ function onAddCarSubmit(event) {
             addCarToDatabase(database, car);
         }
     }
+
+    car.id = database[database.length - 1].id + 1;
 
     for (let i = 0; i < database.length; i++) {
         database[i].id = i + 1
