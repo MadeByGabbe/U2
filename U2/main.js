@@ -21,12 +21,12 @@ function removeCarById(cars, id) {
         let car = cars[i];
         if (car.id == id) {
             let conf = confirm(`Do you really want to remove ${car.model}?`)
-            conf
             if (conf == true) {
                 cars.splice(i, 1);
                 for (let y = 0; y < cars.length; y++) {
                     cars[y].id = y + 1;
                 }
+                renderCars(database)
                 
 
             }
@@ -131,6 +131,10 @@ function onAddCarSubmit(event) {
         }
     }
 
+    for (let i = 0; i < database.length; i++) {
+        database[i].id = i + 1
+    }
+
     renderCars(database);
 
     let form = document.getElementById("add-car-form");
@@ -146,7 +150,7 @@ function onRemoveCarClick(event) {
     let button = event.target;
     let id = button.parentElement.id;
     removeCarById(database, id);
-    renderCars(database)
+    // renderCars(database)
 }
 
 function setRemoveCarHandlers() {

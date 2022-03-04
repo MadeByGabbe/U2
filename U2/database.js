@@ -53,14 +53,14 @@ let database = [
     },
     {
         id: 8,
-        model: "V90 Cross Country",
+        model: "V90 CC",
         body: "Wagon",
         price: 500000,
         drivetrain: "AWD"
     },
     {
         id: 9,
-        model: "V60 Cross Country",
+        model: "V60 CC",
         body: "Wagon",
         price: 454000,
         drivetrain: "AWD"
