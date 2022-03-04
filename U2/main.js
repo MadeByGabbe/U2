@@ -106,7 +106,6 @@ function onAddCarSubmit(event) {
     let body = document.getElementById("body").value;
     let price = Number(document.getElementById("price").value);
     let drivetrain = document.getElementById("drivetrain").value;
-    let conf = confirm("Do you really want to add this car?")
 
     let car = createNewCar(model, body, price, drivetrain);
 
@@ -125,7 +124,7 @@ function onAddCarSubmit(event) {
     }
 
     if (model != "" && body != "" && price != 0 == true) {
-        conf
+        let conf = confirm("Do you really want to add this car?")
         if (conf == true) {
             addCarToDatabase(database, car);
         }
@@ -166,6 +165,7 @@ function onFilterByBody(event) {
     let body = document.getElementById("filter-body").value;
     let cars = getCarsByBody(database, body);
     renderCars(cars);
+    return cars
 }
 
 function onFilterByDrivetrain(event) {
@@ -173,6 +173,7 @@ function onFilterByDrivetrain(event) {
     let drivetrain = document.getElementById("filter-drivetrain").value;
     let cars = getCarsByDrivetrain(database, drivetrain);
     renderCars(cars);
+    return cars
 }
 
 function onListAllClick() {

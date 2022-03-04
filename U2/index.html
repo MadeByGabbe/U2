@@ -10,75 +10,75 @@
 </head>
 
 <body>
-    <div id="wrapper">
-        <div id="volvologo">
-            <img src="volvo-logo.png" alt="volvo logo">
-        </div>
+    <div id="backdrop">
+        <div id="wrapper">
+            <div id="volvologo">
+                <img src="Pictures/volvo-logo.png" alt="volvo logo">
+            </div>
 
-        <h1>Add a Volvo</h1>
+            <h1>Add a Volvo</h1>
 
-            <input id="filter-breed" type="text" placeholder="Filter by body">
-            <input id="filter-age" type="number" placeholder="Filter by drivetrain">
-        <form id="add-car-form">
-            <label>Model</label>
-            <label>Body</label>
-            <label>Price</label>
-            <label>Drivetrain</label>
-            <input id="model" type="text" placeholder="Model">
-            <input id="body" type="text" placeholder="Body">
-            <input id="price" type="number" placeholder="Price">
-            <select id="drivetrain" name="drivetrain">
-                <option value="FWD">FWD</option>
-                <option value="AWD">AWD</option>
-                <option value="RWD">RWD</option>
-                <option value="4WD">4WD</option>
-            </select>
-        </form>
-            
-        <div id="adddiv">
-            <button id="addbutton">Add</button>
-        </div>
-
-        <h2>Filters</h2>
-
-        <div id="filters">
-            <label for="filter-by-body">Body</label>
-            <label for="filter-by-drivetrain">Drivetrain</label>
-            <label></label>
-            <form id="filter-by-body">
-                <input id="filter-body" type="text" placeholder="Filter by body">
-                <button>Filter</button>
-            </form>
-
-            <form id="filter-by-drivetrain">
-                <select id="filter-drivetrain" name="filter-drivetrain">
+            <form id="add-car-form">
+                <label>Model</label>
+                <label>Body</label>
+                <label>Price</label>
+                <label>Drivetrain</label>
+                <input id="model" type="text" placeholder="Model">
+                <input id="body" type="text" placeholder="Body">
+                <input id="price" type="number" placeholder="Price">
+                <select id="drivetrain" name="drivetrain">
                     <option value="FWD">FWD</option>
                     <option value="AWD">AWD</option>
                     <option value="RWD">RWD</option>
                     <option value="4WD">4WD</option>
                 </select>
-                <button>Filter</button>
             </form>
+                
+            <div id="adddiv">
+                <button id="addbutton">Add</button>
+            </div>
 
-            <button id="list-all" type="button">Reset filters</button>
+            <h2>Filters</h2>
 
+            <div id="filters">
+                <label for="filter-by-body">Body</label>
+                <label for="filter-by-drivetrain">Drivetrain</label>
+                <label></label>
+                <form id="filter-by-body">
+                    <input id="filter-body" type="text" placeholder="Filter by body">
+                    <button class="filterbutton">Filter</button>
+                </form>
+
+                <form id="filter-by-drivetrain">
+                    <select id="filter-drivetrain" name="filter-drivetrain">
+                        <option value="FWD">FWD</option>
+                        <option value="AWD">AWD</option>
+                        <option value="RWD">RWD</option>
+                        <option value="4WD">4WD</option>
+                    </select>
+                    <button class="filterbutton">Filter</button>
+                </form>
+
+                <button class="filterbutton" id="list-all" type="button">Reset filters</button>
+
+            </div>
+
+
+            <div id="headers">
+                <div>Id</div>
+                <div>Model</div>
+                <div>Body</div>
+                <div>Price</div>
+                <div>Drivetrain</div>
+                <div>Actions</div>
+            </div>
+
+            <div id="cars"></div>
+
+            <script src="database.js"></script>
+            <script src="main.js"></script>
         </div>
-
-
-        <div id="headers">
-            <div>Id</div>
-            <div>Model</div>
-            <div>Body</div>
-            <div>Price</div>
-            <div>Drivetrain</div>
-            <div>Actions</div>
-        </div>
-
-        <div id="cars"></div>
-
-        <script src="database.js"></script>
-        <script src="main.js"></script>
-    </div>
+    </div>  
 </body>
 
 </html>
